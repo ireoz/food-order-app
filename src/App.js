@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import MealsItem from "./Components/Meals/MealsItem";
+import MealList from "./Components/Meals/MealList";
 import MealSummary from "./Components/Meals/MealSummary";
 import Header from "./Components/UI/Header";
 
@@ -8,7 +8,7 @@ function App() {
     <Fragment>
       <Header/>
       <MealSummary/>
-      <MealsItem/>
+      <MealList/>
     </Fragment>
   );
 }
