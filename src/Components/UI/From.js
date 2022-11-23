@@ -6,7 +6,7 @@ const Form = ()  => {
  return (
     <form className={classes.form}>
     <label>Amount</label>
-    <input type='text' className={classes.form_input}/>
+    <input type='number' className={classes.form_input}/>
     <div>
     <Button className={`${btnClasses.button} ${btnClasses.button_primary}`} type='submit'>Add</Button>
     </div>

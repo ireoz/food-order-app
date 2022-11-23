@@ -4,7 +4,7 @@ import classes from './CartButton.module.css'
 const CartButton = (props) => {
   return (
     <Fragment>
-    <button className={classes.cart_button}> 
+    <button onClick={props.onClick} className={classes.cart_button}> 
     <span className={classes.cart_icon}>
 
     <svg
