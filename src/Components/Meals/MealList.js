@@ -1,5 +1,6 @@
 import MealItem from "./MealItem";
 import Card from "../UI/Card";
+import classes from './MealList.module.css'
 
 const MealList = () => {
 
@@ -22,6 +23,7 @@ const MealList = () => {
             <ul>
             {meals.map(meal => {
           return  <MealItem 
+            key = {meal.id}
             mealName = {meal.mealName}
             mealDescription = {meal.mealDescription}
             mealPrice = {meal.mealPrice}
