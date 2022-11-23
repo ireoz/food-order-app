@@ -4,6 +4,10 @@ import Form from "../UI/From";
 
 const MealItem = (props) => {
 
+    const captureMealCartData = (mealID, amount) => {
+        props.captureMealCartData(mealID,amount)
+    }
+
     return (
         <Fragment>
             <li className={classes.meal_item_list}>
@@ -14,7 +18,7 @@ const MealItem = (props) => {
                     <span>{props.mealPrice}</span>
                 </div>
                 <div className={classes.meal_item_content}>
-                   <Form mealID={props.mealID}/>
+                   <Form mealID={props.mealID} captureMealCartData={captureMealCartData}/>
                 </div>
             </div>
             </li>

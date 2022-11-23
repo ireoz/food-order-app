@@ -8,6 +8,7 @@ import Modal from "./Components/cart/Modal";
 function App() {
 
   let [displayModal, setDisplayModal] = useState(false)
+  let [mealsCart, setMealsCart] = useState([]);
   
   const hideModalHandle = () => {setDisplayModal(false)}
   const displayModalHandle = () => {setDisplayModal(true)}
@@ -18,25 +19,28 @@ function App() {
     mealName: 'Sushi',
     mealDescription: 'Finest fish and veggies',
     mealPrice: '$22.99',
-    mealID: 1
+    mealID: 0
 },
 {
     id: 2,
     mealName: 'Schnitzel',
     mealDescription: 'A German Speciality',
     mealPrice: '$16.50',
-    mealID: 2
+    mealID: 1
 }]
 
-
-
+const updateMealCart = (mealID, amount) => {
+  setMealsCart(prevstate => {
+   return [meals[mealID],...prevstate]
+  })
+}
 
   return (
     <Fragment>
-      {displayModal && <Modal hideModalHandle={hideModalHandle} meals={meals}/>}
+      {displayModal && <Modal hideModalHandle={hideModalHandle} meals={mealsCart}/>}
       <Header displayModalHandle={displayModalHandle}/>
       <MealSummary/>
-      <MealList meals={meals}/>
+      <MealList meals={meals} captureMealCartData={updateMealCart}/>
     </Fragment>
   );
 }

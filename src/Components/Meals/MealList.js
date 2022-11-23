@@ -4,7 +4,9 @@ import classes from './MealList.module.css'
 
 const MealList = (props) => {
 
-    
+    const captureMealCartData = (mealID, amount) => {
+        props.captureMealCartData(mealID,amount)
+    }
 
     return (
         <Card>
@@ -16,6 +18,7 @@ const MealList = (props) => {
             mealDescription = {meal.mealDescription}
             mealPrice = {meal.mealPrice}
             mealID = {meal.mealID}
+            captureMealCartData = {captureMealCartData}
             />
             })}
             </ul>
