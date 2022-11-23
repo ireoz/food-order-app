@@ -4,7 +4,7 @@ import classes from './CartButton.module.css'
 const CartButton = (props) => {
   return (
     <Fragment>
-    <button onClick={props.onClick} className={classes.cart_button}> 
+    <button key={Math.random()} onClick={props.onClick} className={classes.cart_button}> 
     <span className={classes.cart_icon}>
 
     <svg
@@ -19,7 +19,7 @@ const CartButton = (props) => {
     </span>
 
     <span>Your Cart</span>
-    <span className={classes.cart_counter}>O</span>
+    <span className={classes.cart_counter}>{props.amount}</span>
     </button>
     </Fragment>
   );

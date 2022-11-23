@@ -9,6 +9,7 @@ function App() {
 
   let [displayModal, setDisplayModal] = useState(false)
   let [mealsCart, setMealsCart] = useState([]);
+  let [amount, setAmount] = useState(0);
   
   const hideModalHandle = () => {setDisplayModal(false)}
   const displayModalHandle = () => {setDisplayModal(true)}
@@ -30,15 +31,19 @@ function App() {
 }]
 
 const updateMealCart = (mealID, amount) => {
+  setAmount(prevstate => {
+    return (prevstate + +amount);
+  })
   setMealsCart(prevstate => {
-   return [meals[mealID],...prevstate]
+   return  [meals[mealID],...prevstate]
   })
 }
+
 
   return (
     <Fragment>
       {displayModal && <Modal hideModalHandle={hideModalHandle} meals={mealsCart}/>}
-      <Header displayModalHandle={displayModalHandle}/>
+      <Header displayModalHandle={displayModalHandle} amount={amount}/>
       <MealSummary/>
       <MealList meals={meals} captureMealCartData={updateMealCart}/>
     </Fragment>

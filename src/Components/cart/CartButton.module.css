@@ -11,6 +11,8 @@
     border: none;
     color: white;
     cursor: pointer;
+    animation-name: cartUpdated;
+    animation-duration: .3s;
 }
 
 .cart_button:hover {
@@ -33,4 +35,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes cartUpdated {
+    0% {transform: scale(1);}
+    25% {transform: scale(1.1);}
+    50% {transform: scale(1.2);}
+    75% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+    
 }
