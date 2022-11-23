@@ -7,6 +7,7 @@
 .meal_item_content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .meal_item_list {

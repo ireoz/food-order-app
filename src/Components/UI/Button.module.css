@@ -1,0 +1,19 @@
+.button {
+    cursor: pointer;
+    width: 100px;
+    border-radius: 50px;
+    padding: .5rem;
+    font-weight: bold;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
+.button_primary {
+    background-color:  rgb(255, 72, 0);
+    color: white;
+    border: none;
+}
+
+.button_primary:hover {
+    background-color:  rgb(255, 51, 0);
+}
