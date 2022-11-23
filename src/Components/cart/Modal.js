@@ -1,6 +1,7 @@
 import styles from './Modal.module.css'
 import Button from '../UI/Button';
 import classes from '../UI/Button.module.css'
+import MealCartList from './MealCartList';
 
 
 
@@ -9,7 +10,7 @@ const Modal = (props) => {
         <div className={styles.errorModal_border} >
             <div className={styles.errorModal_card}>
                 <div className={styles.errorModal_header}>
-                d
+                <MealCartList cartMeals={props.meals}/>
                 </div>
                 <div className={styles.errorModal_content}>
                   d

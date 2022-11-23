@@ -2,11 +2,12 @@ import classes from './Form.module.css'
 import Button from './Button';
 import btnClasses from './Button.module.css'
 
-const Form = ()  => {
+const Form = (props)  => {
  return (
     <form className={classes.form}>
-    <label>Amount</label>
-    <input type='number' className={classes.form_input}/>
+    <label hidden>{props.mealID}</label>
+    <label htmlFor='amount'>Amount</label>
+    <input id='amount' type='number' className={classes.form_input}/>
     <div>
     <Button className={`${btnClasses.button} ${btnClasses.button_primary}`} type='submit'>Add</Button>
     </div>
