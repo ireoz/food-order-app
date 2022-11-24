@@ -1,4 +1,4 @@
-.errorModal_border {
+.modal_border {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,25 +12,29 @@
 }
 
 
-.errorModal_card {
+.modal_card {
     position: relative;
     border-radius: 20px;
     width: 660px;
     background-color: white;
 }
 
-.errorModal_header {
-    /* display: flex;
+.modal_totalContent {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: purple;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 25%;
-    overflow: hidden; */
 }
 
-.errorModal_footer {
+.modal_totalContent h3{
+    padding-left: .5rem;
+}
+
+.modal_totalContent span{
+    padding-right: 1.4rem;
+}
+
+
+.modal_footer {
   text-align: end;
   padding: 1rem;
 }

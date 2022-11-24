@@ -1,0 +1,29 @@
+.mealCart_Item {
+    border-bottom: 2.5px solid rgb(171, 68, 0);
+    padding-bottom: 1rem;
+
+}
+
+.mealCart_Item h3{
+    margin: .5rem 0;
+}
+
+.mealCart_Price {
+    font-size: .8rem;
+    color: rgb(171, 68, 0);
+    font-weight: bold;
+}
+
+.mealCart_Amount {
+    margin-left: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    padding: 0 .5rem;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.mealCart_Amount::before {
+    content: 'x';
+    padding-right: .1rem;
+    font-weight: bold
+}
