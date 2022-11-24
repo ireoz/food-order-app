@@ -61,7 +61,7 @@ const updateMealCart = (mealID, mealCount) => {
     const mealCartItem = meals[mealID];
     mealCartItem.amount = mealCount;
     const mealCartItemCost = +mealCartItem.amount * +mealCartItem.mealPrice;
-    return [+mealCartItemCost + +prevstate]
+    return [(+mealCartItemCost + +prevstate).toFixed(2)]
   })
 }
 console.log(totalAmount);
