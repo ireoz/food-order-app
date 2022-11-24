@@ -14,7 +14,7 @@ const Modal = (props) => {
                 </div>
                 <div className={styles.modal_totalContent}>
                   <h3>Total Amount</h3>
-                  <span>amount</span>
+                  <span>{props.totalPriceAmount}</span>
                 </div>
                 <div className={styles.modal_footer}>
                  <Button className={`${classes.button} ${classes.button_secondary}`} onClick={props.hideModalHandle} >Close</Button>

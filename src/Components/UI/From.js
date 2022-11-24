@@ -13,7 +13,7 @@ const Form = (props)  => {
     <form onSubmit={formSubmitHandler} className={classes.form}>
     <input readOnly id='mealID' hidden value={props.mealID}/>
     <label htmlFor='amount'>Amount</label>
-    <input id='amount' type='number' className={classes.form_input}/>
+    <input id='amount' type='number' min="1" max="5" className={classes.form_input}/>
     <div>
     <Button className={`${btnClasses.button} ${btnClasses.button_primary}`}  type='submit'>Add</Button>
     </div>

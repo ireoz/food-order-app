@@ -19,7 +19,7 @@ const CartButton = (props) => {
     </span>
 
     <span>Your Cart</span>
-    <span className={classes.cart_counter}>{props.amount}</span>
+    <span className={classes.cart_counter}>{props.mealCount}</span>
     </button>
     </Fragment>
   );

@@ -10,7 +10,7 @@ const Header = (props) => {
             <header>
                 <div className={classes.header_bar}>
                  <h1>ReactMeals</h1> 
-                 <CartButton amount={props.amount} onClick={props.displayModalHandle}></CartButton>
+                 <CartButton mealCount={props.mealCount} onClick={props.displayModalHandle}></CartButton>
                 </div>
                 <div className={classes.header_img}>
                     <img src={image} alt="A table full of delicius food"/>

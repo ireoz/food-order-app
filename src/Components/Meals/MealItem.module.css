@@ -30,3 +30,9 @@
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
+.meal_item_content span::before {
+    content: '$';
+    color: rgb(255, 145, 0);
+    font-weight: bold;
+}
