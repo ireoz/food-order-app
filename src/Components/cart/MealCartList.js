@@ -4,7 +4,9 @@ import classes from './MealCartList.module.css'
 
 const MealCartList = (props) => {
 
-    
+    const deleteMealCartItem = (mealCartData) => {
+        props.deleteMealCartItem(mealCartData);
+    }  
 
     return (
         <Fragment>
@@ -16,6 +18,8 @@ const MealCartList = (props) => {
             mealPrice = {meal.mealPrice}
             mealID = {meal.mealID}
             amount = {meal.amount}
+            uniqueID = {meal.uniqueID}
+            deleteMealCartItem={deleteMealCartItem}
             />
             })}
             </ul>

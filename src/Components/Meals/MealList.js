@@ -13,7 +13,7 @@ const MealList = (props) => {
             <ul>
             {props.meals.map(meal => {
           return  <MealItem 
-            key = {meal.id}
+            key = {Math.random()}
             mealName = {meal.mealName}
             mealDescription = {meal.mealDescription}
             mealPrice = {meal.mealPrice}

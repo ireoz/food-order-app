@@ -17,7 +17,7 @@ function App() {
 
 
   const meals = [{
-    id: 1,
+    uniqueID: 0,
     mealName: 'Sushi',
     mealDescription: 'Finest fish and veggies',
     mealPrice: '22.99',
@@ -25,7 +25,7 @@ function App() {
     amount: 0
 },
 {
-    id: 2,
+    uniqueID: 0,
     mealName: 'Schnitzel',
     mealDescription: 'A German Speciality',
     mealPrice: '16.50',
@@ -33,14 +33,14 @@ function App() {
     amount: 0
 },
 {
-  id: 3,
+  uniqueID: 0,
   mealName: 'Barbecue Burger',
   mealDescription: 'American, raw, meaty',
   mealPrice: '12.99',
   mealID: 2,
   amount: 0
 },
-{ id: 4,
+{ uniqueID: 0,
   mealName: 'Green Bowl',
   mealDescription: 'Healthy....and green',
   mealPrice: '18.99',
@@ -54,6 +54,7 @@ const updateMealCart = (mealID, mealCount) => {
   setMealsCart(prevstate => {
     const mealCartItem = meals[mealID]
     mealCartItem.amount = mealCount;
+    mealCartItem.uniqueID = (Math.random())
    return  [mealCartItem,...prevstate]
   })
 
@@ -64,10 +65,29 @@ const updateMealCart = (mealID, mealCount) => {
     return [(+mealCartItemCost + +prevstate).toFixed(2)]
   })
 }
-console.log(totalAmount);
+
+
+
+const deleteMealCartItem = (mealCartData) => {
+
+  setMealsCart(prevstate => {
+   const updatedMealsCart = prevstate.filter(meal => meal.uniqueID !== +mealCartData.uniqueID )
+   return  updatedMealsCart
+  })
+
+  setMealCount(prevstate =>  prevstate - mealCartData.mealQuantity)
+
+  setTotalAmount(prevstate => {
+    const figureToDeduct = (mealCartData.mealQuantity * mealCartData.mealPrice)
+    console.log(figureToDeduct, typeof(figureToDeduct));
+    return [(prevstate - figureToDeduct).toFixed(2)];
+  })
+  
+}  
+
   return (
     <Fragment>
-      {displayModal && <Modal hideModalHandle={hideModalHandle} mealsCart={mealsCart} totalPriceAmount={totalAmount} />}
+      {displayModal && <Modal hideModalHandle={hideModalHandle} mealsCart={mealsCart} totalPriceAmount={totalAmount} deleteMealCartItem={deleteMealCartItem}/>}
       <Header displayModalHandle={displayModalHandle} mealCount={mealCount}/>
       <MealSummary/>
       <MealList meals={meals} captureMealCartData={updateMealCart}/>

@@ -6,3 +6,7 @@
  width: 35px;
  margin-left: 1rem;
 }
+
+.form_input_inValid {
+    background-color: lightcoral;
+}

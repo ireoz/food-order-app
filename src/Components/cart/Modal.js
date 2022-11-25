@@ -6,11 +6,16 @@ import MealCartList from './MealCartList';
 
 
 const Modal = (props) => {
+
+    const deleteMealCartItem = (mealCartData) => {
+        props.deleteMealCartItem(mealCartData);
+    }  
+
     return (
         <div className={styles.modal_border} >
             <div className={styles.modal_card}>
                 <div className={styles.modal_header}>
-                <MealCartList cartMeals={props.mealsCart}/>
+                <MealCartList cartMeals={props.mealsCart} deleteMealCartItem={deleteMealCartItem}/>
                 </div>
                 <div className={styles.modal_totalContent}>
                   <h3>Total Amount</h3>
