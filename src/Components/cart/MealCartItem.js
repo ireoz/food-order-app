@@ -6,8 +6,6 @@ const MealCartItem = (props) => {
 
 const deleteMealCartItem = (event) => {
     event.preventDefault()
-    console.log(event);
-    console.log(event.target.children[1].children[2].innerText);
     props.deleteMealCartItem({
         uniqueID: event.target.firstChild.textContent,
     mealPrice: event.target.children[1].children[1].innerText,
