@@ -17,14 +17,37 @@ const reducer = (state,action) => {
       totalAmount: (+state.totalAmount + +mealCartItemCost).toFixed(2) }
   }
 
-  if(action.type === "REMOVE_MEAL"){
-    const updatedMealsCart = state.mealsCart.filter(meal => meal.uniqueID !== +action.uniqueID )
-    return  {mealsCart : [...updatedMealsCart], 
-      mealsCount: (+state.mealsCount - +action.mealQuantity), 
-      totalAmount: (+state.totalAmount - (+action.mealPrice * +action.mealQuantity)).toFixed(2) }
+  if(action.type === "MODIFY_MEALCART"){
+    if(action.event === '-'){
+
+      if(action.mealQuantity > 1){
+        const MealCartItemsWithAmountChange = state.mealsCart.map(meal => {
+          meal.uniqueID === +action.uniqueID && meal.amount--
+          return meal
+        } )
+          return {mealsCart : [...MealCartItemsWithAmountChange], 
+        mealsCount: (+state.mealsCount - 1), 
+        totalAmount: (+state.totalAmount - +action.mealPrice).toFixed(2)
+             }
+       }
+         const updatedMealsCart = state.mealsCart.filter(meal => meal.uniqueID !== +action.uniqueID )
+          return  {mealsCart : [...updatedMealsCart], 
+         mealsCount: (+state.mealsCount - +action.mealQuantity), 
+          totalAmount: (+state.totalAmount - (+action.mealPrice * +action.mealQuantity)).toFixed(2) }
+    }
+
+   if(action.event === '+'){
+    const MealCartItemsWithAmountChange = state.mealsCart.map(meal => {
+      meal.uniqueID === +action.uniqueID && meal.amount++
+      return meal
+    })
+    return {mealsCart : [...MealCartItemsWithAmountChange], 
+    mealsCount: (+state.mealsCount + 1), 
+    totalAmount: (+state.totalAmount + +action.mealPrice).toFixed(2)
+         }
   }
 }
-
+}
 
 function App() {
 
@@ -76,8 +99,8 @@ const updateMealCart = (mealID, mealCount) =>
 }
 
 const deleteMealCartItem = (mealCartData) => {
- console.log(mealCartData)
-  dispatch({type: 'REMOVE_MEAL', 
+  dispatch({type: 'MODIFY_MEALCART',
+  event: mealCartData.event,
   mealQuantity: mealCartData.mealQuantity,
   uniqueID: mealCartData.uniqueID,
   mealPrice: mealCartData.mealPrice}) 

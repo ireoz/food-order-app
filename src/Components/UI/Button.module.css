@@ -28,3 +28,7 @@
     filter: grayscale(90%);
     cursor: default;   
 }
+
+.button_event {
+    width: 50px;
+}
