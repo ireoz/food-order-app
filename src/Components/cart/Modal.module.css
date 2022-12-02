@@ -12,13 +12,6 @@
 }
 
 
-.modal_card {
-    position: relative;
-    border-radius: 20px;
-    width: 660px;
-    background-color: white;
-}
-
 .modal_totalContent {
     display: flex;
     justify-content: space-between;

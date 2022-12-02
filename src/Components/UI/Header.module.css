@@ -7,6 +7,7 @@
     background-color: rgb(255, 72, 0);
     color: white;
     z-index: 1;
+    font-size: .8rem
     
 }
 
@@ -17,5 +18,15 @@
     object-fit: cover;
     transform: skewY(-4deg)
 
+    
+}
+
+@media (min-width: 600px) {
+    
+    .header_bar {
+        
+        font-size: 1.2rem
+        
+    }
     
 }

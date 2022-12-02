@@ -111,8 +111,10 @@ const deleteMealCartItem = (mealCartData) => {
     <Fragment>
       {displayModal && <Modal hideModalHandle={hideModalHandle} mealsCart={state.mealsCart} totalPriceAmount={state.totalAmount} deleteMealCartItem={deleteMealCartItem}/>}
       <Header displayModalHandle={displayModalHandle} mealCount={state.mealsCount}/>
+      <main>
       <MealSummary/>
       <MealList meals={meals} captureMealCartData={updateMealCart}/>
+      </main>
     </Fragment>
   );
 }
